@@ -1,8 +1,6 @@
 const Airtable = require('airtable');
 const base = new Airtable({apiKey: 'keyJoo0QH6ip5yH4S'}).base('app2yrNbBNc7l94XW');
 
-
-
 export function fetchProjects() {
 	let projects = [];
 	base('Projects').select({
@@ -17,8 +15,6 @@ export function fetchProjects() {
 	        projects.push(project);
 
 	    });
-
-
 	    // To fetch the next page of records, call `fetchNextPage`.
 	    // If there are more records, `page` will get called again.
 	    // If there are no more records, `done` will get called.
@@ -29,10 +25,3 @@ export function fetchProjects() {
 	});
 	return projects;
 }
-
-
-
-
-//fetch all records
-//make helpers that you can call from within the react components
-//that will give you the data as you need it
