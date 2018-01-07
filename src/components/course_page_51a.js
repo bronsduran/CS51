@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
+import Header from './page_header';
+import Description from './page_description';
+import {Tabs, Tab} from 'material-ui/Tabs';
 
 class CoursePage51a extends Component {
 
   render() {
     return (
       <div>
-        <h1> 51a Course Page </h1>
+        <Header 
+          title="Designing Social Impact Projects"
+          subtitle="CS51 (2 units) - Winter 2018"
+        />
       </div>
     );
   }
@@ -13,11 +19,4 @@ class CoursePage51a extends Component {
 
 export default CoursePage51a;
 
-// Content from last year:
-	// Calendar: https://drive.google.com/drive/u/1/folders/0BzA3XGwAG6_JbEZjaEZKUldhODQ
-	// Course Info: https://drive.google.com/drive/u/1/folders/0BzA3XGwAG6_JbEZjaEZKUldhODQ
-
-// Examples of what this page could look like:
-	// http://cs377u.stanford.edu/index.html
-	// http://cs247.stanford.edu/2017-spring/
 

@@ -3,15 +3,15 @@ import Iframe from './iframe_wrapper';
 import Header from './page_header';
 import Description from './page_description';
 
-class Projects extends Component {
+class Partners extends Component {
 
   render() {
     return (
       <div>
-        <Header title="Projects"/>
-      	<Description text="projects description goes here"/>
-        <Iframe 
-      		src="https://airtable.com/embed/shrF8yl8k0qm1SHHx?backgroundColor=teal&viewControls=on"
+        <Header title="Partners"/>
+      	<Description text="partners description goes here"/>
+       	<Iframe 
+      		src="https://airtable.com/embed/shrWjp5WeTdtOJSFx?backgroundColor=teal"
       		className="airtable-embed"
       		height="700"
       		width="100%"
@@ -23,4 +23,5 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+export default Partners;
+

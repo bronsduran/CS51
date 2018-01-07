@@ -4,7 +4,7 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="landing-page-container">
         <h1> Landing Page Component </h1>
       </div>
     );
