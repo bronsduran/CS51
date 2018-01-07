@@ -13,8 +13,6 @@
 
 ## Installation
 
-Both `Node.js` and `npm` are bundled with yarn, so you don't need to install them manually.
-
 ```
 git clone https://github.com/bronsduran/CS51.git
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
