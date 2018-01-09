@@ -36,6 +36,10 @@ body {
 	position: fixed;
 	width: 100%;
 	z-index: 2;
+	background-image: -webkit-linear-gradient(-234deg, rgba(67, 152, 185, 1) 0%, rgba(6, 187, 186, 1) 100%) !important;
+  background-image: -moz-linear-gradient(-234deg, rgba(67, 152, 185, 1) 0%, rgba(6, 187, 186, 1) 100%) !important;
+  background-image: -o-linear-gradient(-234deg, rgba(67, 152, 185, 1) 0%, rgba(6, 187, 186, 1) 100%) !important;
+  background-image: linear-gradient(-234deg, rgba(67, 152, 185, 1) 0%, rgba(6, 187, 186, 1) 100%) !important;
 /*	background-color: transparent!important;*/
 }
 
