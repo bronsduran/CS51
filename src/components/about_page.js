@@ -11,7 +11,7 @@ class About extends Component {
         <Header title="About Us"/>
         <Description text="mission description goes here" />
         <Iframe 
-          src="https://airtable.com/embed/shrDTyLMhvO3ldlTV?backgroundColor=teal&viewControls=on"
+          src="https://airtable.com/embed/shrDTyLMhvO3ldlTV?backgroundColor=teal&viewControls=off"
           className="airtable-embed"
           height="100%"
           width="100%"

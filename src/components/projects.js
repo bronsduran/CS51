@@ -9,7 +9,7 @@ class Projects extends Component {
     return (
       <div className="page-wrapper">
         <Iframe 
-      		src="https://airtable.com/embed/shrF8yl8k0qm1SHHx?backgroundColor=teal&viewControls=on"
+      		src="https://airtable.com/embed/shrF8yl8k0qm1SHHx?backgroundColor=teal&viewControls=off"
       		className="airtable-embed"
       		height="100%"
       		width="100%"

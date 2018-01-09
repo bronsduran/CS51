@@ -13,4 +13,4 @@ class LandingHeader extends Component {
 	}
 }
 
-export default LandingHeader
+export default LandingHeader;
