@@ -7,7 +7,7 @@ class About extends Component {
 
   render() {
     return (
-      <div>
+      <div className="page-wrapper">
         <Header title="About Us"/>
         <Description text="mission description goes here" />
         <Iframe 

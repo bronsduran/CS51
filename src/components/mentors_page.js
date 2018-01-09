@@ -9,11 +9,9 @@ class Mentors extends Component {
 
   render() {
     return (
-      <div>
-      	<Header title="Mentors"/>
-      	<Description text={mentors_description}/>
+      <div className="page-wrapper">
       	<Iframe 
-      		src="https://airtable.com/embed/shrrwA5kbCOFC2WLH?backgroundColor=teal&viewControls=off"
+      		src="https://airtable.com/embed/shrrwA5kbCOFC2WLH?backgroundColor=teal&viewControls=on"
       		className="airtable-embed"
       		height="700"
       		width="100%"

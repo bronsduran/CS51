@@ -7,7 +7,7 @@ class CoursePage51b extends Component {
 
   render() {
     return (
-      <div>
+      <div className="page-wrapper">
         <Header 
           title="Implementing Social Impact Projects"
           subtitle="CS52 (2 units) - Spring 2018"

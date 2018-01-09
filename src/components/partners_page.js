@@ -7,9 +7,7 @@ class Partners extends Component {
 
   render() {
     return (
-      <div>
-        <Header title="Partners"/>
-      	<Description text="partners description goes here"/>
+      <div className="page-wrapper">
        	<Iframe 
       		src="https://airtable.com/embed/shrWjp5WeTdtOJSFx?backgroundColor=teal"
       		className="airtable-embed"

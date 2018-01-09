@@ -17,6 +17,9 @@ module.exports = {
     },{
       test: /\.json$/,
       loader: 'json-loader'
+    },{
+      test: /.*\.(gif|png|jpe?g)$/i,
+      loader: 'file-loader'
     }]
   },
   resolve: {
