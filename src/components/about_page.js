@@ -13,9 +13,9 @@ class About extends Component {
         <Iframe 
           src="https://airtable.com/embed/shrDTyLMhvO3ldlTV?backgroundColor=teal&viewControls=on"
           className="airtable-embed"
-          height="700"
+          height="100%"
           width="100%"
-          styles="background: transparent; border: none;"
+          styles={{background: "transparent"}, {border: "none"}, {height: "100%"}}
           frameBorder="0"
         />
       </div>

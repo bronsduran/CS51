@@ -11,9 +11,9 @@ class Partners extends Component {
        	<Iframe 
       		src="https://airtable.com/embed/shrWjp5WeTdtOJSFx?backgroundColor=teal"
       		className="airtable-embed"
-      		height="700"
+      		height="100%"
       		width="100%"
-      		styles="background: transparent; border: none;"
+      		styles={{background: "transparent"}, {border: "none"}, {height: "100%"}}
       		frameBorder="0"
       	/>
       </div>

@@ -49,6 +49,11 @@ body {
 
 .navigation-title {
 	color: white!important;
+	font-family: 'Source Sans Pro', sans-serif!important;
+}
+
+.nav-button {
+	font-family: 'Source Sans Pro', sans-serif!important;
 }
 
 .page-description {
@@ -84,15 +89,24 @@ body {
 	width: 100%!important;
 }
 
-.content-container {
 
+.menu-options {
+	background-color: #FAFAFA;
+	overflow: scroll;
 }
 
 .page-wrapper {
 	padding-top: 56px;
+	height: 100vh;
+}
+
+.iframe-wrapper {
+	height: 100%;
 }
 
 .menu-options {
 	position: fixed;
 	width: 25%;
+	height: 100%;
+	z-index: 10;
 }

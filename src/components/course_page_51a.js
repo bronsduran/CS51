@@ -13,10 +13,10 @@ class CoursePage51a extends Component {
       <div className="page-wrapper">
         <Grid className="grid-wrapper">
           <Row>
-            <Col xs={9} className="content-container">
+            <Col xs={9} >
               <Image src={CourseInfo} responsive />
             </Col>
-            <Col xs={3}>
+            <Col xs={3} >
               <List className="menu-options">
                 <Subheader>Handouts</Subheader>
                   <ListItem primaryText="Course Information"/>
@@ -27,8 +27,12 @@ class CoursePage51a extends Component {
                 <Divider />
                 <Subheader>Lecture Slides</Subheader>
                 <Divider />
+                <Subheader>Resources</Subheader>
+                <Divider />
                 <Subheader>Other</Subheader>
                   <ListItem primaryText="Calendar"/>
+                  <ListItem primaryText="Partner Bio Book"/>
+                  <ListItem primaryText="Mentor Bio Book"/>
                 <Divider />
               </List>
             </Col>
