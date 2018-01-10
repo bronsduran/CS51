@@ -26,6 +26,8 @@ class CoursePage51a extends Component {
     // whenever a new record is recieved.
     Airtable.fetchAdministrivia.call(this);
     Airtable.fetchAssignments.call(this);
+    Airtable.fetchLectureSlides.call(this);
+    Airtable.fetchResources.call(this);
   }
 
   mapRecordsToElements(records) {
