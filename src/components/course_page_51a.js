@@ -7,11 +7,6 @@ import CourseInfo from '../assets/course-info.png';
 import * as Airtable from '../database';
 
 
-function openInNewTab(url) {
-  var win = window.open(url, '_blank');
-  win.focus();
-}
-
 class CoursePage51a extends Component {
 
   constructor(props) {
@@ -25,11 +20,22 @@ class CoursePage51a extends Component {
     }
   }
 
-  navigateToURL(url) {
-    var win = window.open(url, '_blank');
-    win.focus();
+  componentDidMount() {
+    // using call(this) is hacky and probably not the best practice
+    // I'm doing this so that the state can be set in each of the calls
+    // whenever a new record is recieved.
+    Airtable.fetchAdministrivia.call(this);
+    Airtable.fetchAssignments.call(this);
   }
 
+  mapRecordsToElements(records) {
+    return records.map((record) =>
+      <ListItem 
+        primaryText={record.fields["Name"]} 
+        containerElement={<a href={record.fields["Link"]} target="_blank"></a>} 
+      />
+    );
+  }
 
   render() {
     return (
@@ -42,17 +48,19 @@ class CoursePage51a extends Component {
             <Col xs={3} >
               <List className="menu-options">
                 <Subheader>Administrivia</Subheader>
-                  <ListItem primaryText="Course Information" containerElement={<a href="https://drive.google.com/file/d/1lmwA4_fwCfSl9JPQPtyPFBShLNT01tCF/view?usp=sharing" target="_blank"></a>} />
-                  <ListItem primaryText="Syllabus" containerElement={<a href="https://drive.google.com/file/d/1lmwA4_fwCfSl9JPQPtyPFBShLNT01tCF/view?usp=sharing" target="_blank"></a>} />
-                  <ListItem primaryText="Attendance Policy" />
+                  {this.mapRecordsToElements(this.state.administrivia)}
                 <Divider />
                 <Subheader>Assignments</Subheader>
-                  <ListItem primaryText="Week 1: Onboarding" containerElement={<a href="https://drive.google.com/file/d/19tjZmbFjJA0FlV5DS69ynP-Gq4Ya8d0B/view?usp=sharing" target="_blank"></a>} />
+                  {this.mapRecordsToElements(this.state.assignments)}
                 <Divider />
                 <Subheader>Lecture Slides</Subheader>
+                  {this.mapRecordsToElements(this.state.lectureSlides)}
                 <Divider />
                 <Subheader>Resources</Subheader>
-                  <ListItem primaryText="Needfinding & Synthesis Guidebook" containerElement={<a href="https://drive.google.com/file/d/1FCIsDIL1lHV4F8gsx33k2krnWUgtzrqY/view?usp=sharing" target="_blank"></a>} />
+                  {this.mapRecordsToElements(this.state.resources)}
+                <Divider />
+                <Subheader>Other</Subheader>
+                  {this.mapRecordsToElements(this.state.other)}
                 <Divider />
               </List>
             </Col>
