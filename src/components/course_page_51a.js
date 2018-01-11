@@ -6,7 +6,6 @@ import {Grid, Row, Col, Image } from 'react-bootstrap';
 import CourseInfo from '../assets/course-info.png';
 import * as Airtable from '../database';
 
-
 class CoursePage51a extends Component {
 
   constructor(props) {
@@ -44,9 +43,6 @@ class CoursePage51a extends Component {
       <div className="page-wrapper">
         <Grid className="grid-wrapper">
           <Row>
-            <Col xs={9} >
-              <Image src={CourseInfo} responsive />
-            </Col>
             <Col xs={3} >
               <List className="menu-options">
                 <Subheader>Administrivia</Subheader>
@@ -66,7 +62,9 @@ class CoursePage51a extends Component {
                 <Divider />
               </List>
             </Col>
-            
+            <Col xs={9} >
+              <Image src={CourseInfo} responsive />
+            </Col>
           </Row>
         </Grid>
       </div>

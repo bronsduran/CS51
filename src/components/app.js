@@ -45,7 +45,6 @@ export default class App extends Component {
       				<FlatButton label="Projects" className="nav-button" containerElement={<a href="/projects">Projects</a>}/>
       				<FlatButton label="CS51" className="nav-button" containerElement={<a href="/CS51">CS51</a>}/>
       				<FlatButton label="CS52" className="nav-button" />
-      				<FlatButton label="About" className="nav-button" containerElement={<a href="/about">About</a>}/>
 		        	<ToolbarSeparator />
 		          <RaisedButton label="Apply" onClick={applyClickHandler} primary={true} />
 		        </ToolbarGroup>

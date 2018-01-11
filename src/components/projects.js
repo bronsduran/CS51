@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import Iframe from './iframe_wrapper';
 import Header from './page_header';
 import Description from './page_description';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class Projects extends Component {
 
   render() {
     return (
       <div className="page-wrapper">
-        <Iframe 
+      	<Iframe 
       		src="https://airtable.com/embed/shrF8yl8k0qm1SHHx?backgroundColor=teal&viewControls=off"
       		className="airtable-embed"
       		height="100%"

@@ -13,7 +13,7 @@ import About from './components/about_page.js';
 export default (
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
-			<IndexRoute component={LandingPage} />
+			<IndexRoute component={CoursePage51a} />
 			<Route path="CS51" component={CoursePage51a} />
 			<Route path="CS52" component={CoursePage51b} />
 			<Route path="projects" component={Projects} />
