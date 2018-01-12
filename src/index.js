@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './components/app';
 
 ReactDOM.render(
-  <BrowserRouter basename="/CS51">
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
   document.getElementById('root'),

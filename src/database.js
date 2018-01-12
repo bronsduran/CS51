@@ -55,7 +55,7 @@ export function fetchAssignments() {
 }
 
 export function fetchLectureSlides() {
-	let slideDecks = [];
+	let classSlides = [];
 	let thisContext = this;
 	base('CS51 Lecture Slides').select({
     // Selecting the first 3 records in Grid view:
@@ -66,8 +66,8 @@ export function fetchLectureSlides() {
 
 	    records.forEach(function(slideDeck) {
 	        console.log('Retrieved', slideDeck.get('Name'));
-	        slideDecks.push(slideDeck);
-	        thisContext.setState({ slideDecks });
+	        classSlides.push(slideDeck);
+	        thisContext.setState({ classSlides });
 	    });
 	    // To fetch the next page of records, call `fetchNextPage`.
 	    // If there are more records, `page` will get called again.
@@ -77,7 +77,7 @@ export function fetchLectureSlides() {
 	}, function done(err) {
 	    if (err) { console.error(err); return; }
 	});
-	return slideDecks;
+	return classSlides;
 }
 
 export function fetchResources() {

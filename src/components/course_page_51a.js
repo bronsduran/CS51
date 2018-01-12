@@ -13,7 +13,7 @@ class CoursePage51a extends Component {
     this.state = {
       administrivia: [],
       assignments: [],
-      lectureSlides: [],
+      classSlides: [],
       resources: [],
       other: []
     }
@@ -30,10 +30,11 @@ class CoursePage51a extends Component {
   }
 
   mapRecordsToElements(records) {
-    return records.map((record) =>
+    return records.map((record, key) =>
       <ListItem 
         primaryText={record.fields["Name"]} 
         containerElement={<a href={record.fields["Link"]} target="_blank"></a>} 
+        key={key}
       />
     );
   }
@@ -45,25 +46,45 @@ class CoursePage51a extends Component {
           <Row>
             <Col xs={3} >
               <List className="menu-options">
-                <Subheader>Administrivia</Subheader>
-                  {this.mapRecordsToElements(this.state.administrivia)}
+                <ListItem
+                  primaryText="Administrivia"
+                  initiallyOpen={true}
+                  primaryTogglesNestedList={true}
+                  nestedItems={this.mapRecordsToElements(this.state.administrivia)}
+                />
                 <Divider />
-                <Subheader>Assignments</Subheader>
-                  {this.mapRecordsToElements(this.state.assignments)}
+                <ListItem
+                  primaryText="Assignments"
+                  initiallyOpen={true}
+                  primaryTogglesNestedList={true}
+                  nestedItems={this.mapRecordsToElements(this.state.assignments)}
+                />
                 <Divider />
-                <Subheader>Lecture Slides</Subheader>
-                  {this.mapRecordsToElements(this.state.lectureSlides)}
+                <ListItem
+                  primaryText="Class Slides"
+                  initiallyOpen={true}
+                  primaryTogglesNestedList={true}
+                  nestedItems={this.mapRecordsToElements(this.state.classSlides)}
+                />
                 <Divider />
-                <Subheader>Resources</Subheader>
-                  {this.mapRecordsToElements(this.state.resources)}
+                <ListItem
+                  primaryText="Resources"
+                  initiallyOpen={true}
+                  primaryTogglesNestedList={true}
+                  nestedItems={this.mapRecordsToElements(this.state.resources)}
+                />
                 <Divider />
-                <Subheader>Other</Subheader>
-                  {this.mapRecordsToElements(this.state.other)}
+                <ListItem
+                  primaryText="Other"
+                  initiallyOpen={true}
+                  primaryTogglesNestedList={true}
+                  nestedItems={this.mapRecordsToElements(this.state.other)}
+                />
                 <Divider />
               </List>
             </Col>
             <Col xs={9} >
-              <Image src="/CS51/fe27df1dab61ce9f35083f432ab5b5a6.png" responsive />
+              <Image src={CourseInfo} responsive />
             </Col>
           </Row>
         </Grid>

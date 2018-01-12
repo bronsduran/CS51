@@ -23,6 +23,10 @@ function applyClickHandler() {
   alert('The application period for Winter 2018 has ended, and will reopen fall 2019.');
 }
 
+function cs52ClickHandler() {
+  alert('Coming soon :)');
+}
+
 function goHome() {
 	window.location.href = './';
 }
@@ -48,7 +52,7 @@ export default class App extends Component {
 							<FlatButton label="Mentors" className="nav-button" containerElement={<Link to={'/mentors'}>Mentors</Link>}/>
       				<FlatButton label="Projects" className="nav-button" containerElement={<Link to={'/Projects'}>Projects</Link>}/>
       				<FlatButton label="CS51" className="nav-button" containerElement={<Link to={'/'}>CS51</Link>}/>
-      				<FlatButton label="CS52" className="nav-button" />
+      				<FlatButton label="CS52" className="nav-button" onClick={cs52ClickHandler} />
 		        	<ToolbarSeparator />
 		          <RaisedButton label="Apply" onClick={applyClickHandler} primary={true} />
 		        </ToolbarGroup>
