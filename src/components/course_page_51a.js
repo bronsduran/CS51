@@ -63,7 +63,7 @@ class CoursePage51a extends Component {
               </List>
             </Col>
             <Col xs={9} >
-              <Image src={CourseInfo} responsive />
+              <Image src="/CS51/fe27df1dab61ce9f35083f432ab5b5a6.png" responsive />
             </Col>
           </Row>
         </Grid>

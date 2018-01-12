@@ -57433,7 +57433,7 @@
 	            _react2.default.createElement(
 	              _reactBootstrap.Col,
 	              { xs: 9 },
-	              _react2.default.createElement(_reactBootstrap.Image, { src: _courseInfo2.default, responsive: true })
+	              _react2.default.createElement(_reactBootstrap.Image, { src: '/CS51/fe27df1dab61ce9f35083f432ab5b5a6.png', responsive: true })
 	            )
 	          )
 	        )
