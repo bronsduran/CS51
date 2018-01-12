@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
 import LandingPage from './components/landing_page';
@@ -11,15 +11,13 @@ import Mentors from './components/mentors_page.js';
 import About from './components/about_page.js';
 
 export default (
-	<Router history={browserHistory}>
-		<Route path="/" component={App}>
-			<IndexRoute component={CoursePage51a} />
-			<Route path="CS51" component={CoursePage51a} />
-			<Route path="CS52" component={CoursePage51b} />
-			<Route path="projects" component={Projects} />
-			<Route path="partners" component={Partners} />
-			<Route path="mentors" component={Mentors} />
-			<Route path="about" component={About} />
-		</Route>
-	</Router>
+	<Route path="/" component={App}>
+		<IndexRoute component={CoursePage51a} />
+		<Route path="CS51" component={CoursePage51a} />
+		<Route path="CS52" component={CoursePage51b} />
+		<Route path="projects" component={Projects} />
+		<Route path="partners" component={Partners} />
+		<Route path="mentors" component={Mentors} />
+		<Route path="about" component={About} />
+	</Route>
 );
