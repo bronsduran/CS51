@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import LandingPage from './landing_page';
-import Projects from './projects';
-import CoursePage51a from './course_page_51a';
-import CoursePage51b from './course_page_51b';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
@@ -14,6 +10,14 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import SvgIcon from 'material-ui/SvgIcon';
+import { Switch, Route, Link } from 'react-router-dom';
+import LandingPage from './landing_page';
+import CoursePage51a from './course_page_51a';
+import CoursePage51b from './course_page_51b';
+import Projects from './projects';
+import Partners from './partners_page.js';
+import Mentors from './mentors_page.js';
+import About from './about_page.js';
 
 function applyClickHandler() {
   alert('The application period for Winter 2018 has ended, and will reopen fall 2019.');
@@ -40,16 +44,23 @@ export default class App extends Component {
 		          <ToolbarTitle className="navigation-title" text="CS + SG Studio" />
 		        </ToolbarGroup>
 		        <ToolbarGroup lastChild={true} className="nav-button-group">
-							<FlatButton label="Partners" className="nav-button" containerElement={<a href="/partners">Partners</a>}/>
-							<FlatButton label="Mentors" className="nav-button" containerElement={<a href="/mentors">Mentors</a>}/>
-      				<FlatButton label="Projects" className="nav-button" containerElement={<a href="/projects">Projects</a>}/>
-      				<FlatButton label="CS51" className="nav-button" containerElement={<a href="/CS51">CS51</a>}/>
+							<FlatButton label="Partners" className="nav-button" containerElement={<Link to={'/partners'}>Partners</Link>}/>
+							<FlatButton label="Mentors" className="nav-button" containerElement={<Link to={'/mentors'}>Mentors</Link>}/>
+      				<FlatButton label="Projects" className="nav-button" containerElement={<Link to={'/Projects'}>Projects</Link>}/>
+      				<FlatButton label="CS51" className="nav-button" containerElement={<Link to={'/'}>CS51</Link>}/>
       				<FlatButton label="CS52" className="nav-button" />
 		        	<ToolbarSeparator />
 		          <RaisedButton label="Apply" onClick={applyClickHandler} primary={true} />
 		        </ToolbarGroup>
       		</Toolbar>
-	      	{this.props.children}
+	      	
+	      	<Switch>
+		        <Route exact path="/" component={CoursePage51a} />
+		        <Route path="/projects" component={Projects} />
+						<Route path="/partners" component={Partners} />
+						<Route path="/mentors" component={Mentors} />
+		      </Switch>
+
       	</div>
       </MuiThemeProvider>
     );
