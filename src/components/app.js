@@ -27,10 +27,6 @@ function cs52ClickHandler() {
   alert('Coming soon :)');
 }
 
-function goHome() {
-	window.location.href = './';
-}
-
 const logo_path = "M23.1858609,15.4004907 L10.750075,23.9495294 L23.0440262,32.4010633 L23.0440262,47.7615674 L0.700011737,30.889002 L0.700000763,17.0405592 L0.900012258,17.1780581 L0.9000125,16.8725654 L23.1344318,0.0827582913 L23.1344318,0 L23.1884291,0.0419834224 L23.244027,0 L23.244027,0.0852112193 L64.8300018,32.4186628 L64.8300018,32.4010633 L77.2239534,23.8807837 L64.8300018,15.3605041 L64.8300018,0 L87.1740163,16.8725654 L87.1740219,23.8807837 L87.1740163,30.889002 L64.8496738,47.7467126 L64.8496738,47.794462 L23.1858609,15.4004907 Z"
 
 export default class App extends Component {
@@ -48,10 +44,10 @@ export default class App extends Component {
 		          <ToolbarTitle className="navigation-title" text="CS + SG Studio" />
 		        </ToolbarGroup>
 		        <ToolbarGroup lastChild={true} className="nav-button-group">
-							<FlatButton label="Partners" className="nav-button" containerElement={<Link to={'/partners'}>Partners</Link>}/>
-							<FlatButton label="Mentors" className="nav-button" containerElement={<Link to={'/mentors'}>Mentors</Link>}/>
-      				<FlatButton label="Projects" className="nav-button" containerElement={<Link to={'/Projects'}>Projects</Link>}/>
-      				<FlatButton label="CS51" className="nav-button" containerElement={<Link to={'/'}>CS51</Link>}/>
+							<FlatButton label="Partners" className="nav-button" containerElement={<Link to={'/partners'}></Link>}/>
+							<FlatButton label="Mentors" className="nav-button" containerElement={<Link to={'/mentors'}></Link>}/>
+      				<FlatButton label="Projects" className="nav-button" containerElement={<Link to={'/Projects'}></Link>}/>
+      				<FlatButton label="CS51" className="nav-button" containerElement={<Link to={'/'}></Link>}/>
       				<FlatButton label="CS52" className="nav-button" onClick={cs52ClickHandler} />
 		        	<ToolbarSeparator />
 		          <RaisedButton label="Apply" onClick={applyClickHandler} primary={true} />
