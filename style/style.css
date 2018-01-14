@@ -68,6 +68,7 @@ body {
 
 .navigation-brand-container {
 	margin-left: 10px!important;
+	cursor: pointer;
 }
 
 .logo {
@@ -102,6 +103,10 @@ body {
 .menu-options {
 	background-color: #FAFAFA;
 	overflow: scroll;
+	position: fixed;
+	width: 25%;
+	height: 100%;
+	z-index: 10;
 }
 
 .page-wrapper {
@@ -111,13 +116,6 @@ body {
 
 .iframe-wrapper {
 	height: 100%;
-}
-
-.menu-options {
-	position: fixed;
-	width: 25%;
-	height: 100%;
-	z-index: 10;
 }
 
 .landing-header {

@@ -9,7 +9,7 @@ class Partners extends Component {
     return (
       <div className="page-wrapper">
        	<Iframe 
-      		src="https://airtable.com/embed/shrWjp5WeTdtOJSFx?backgroundColor=teal"
+      		src="https://airtable.com/embed/shrWjp5WeTdtOJSFx?backgroundColor=teal&viewControls=on"
       		className="airtable-embed"
       		height="100%"
       		width="100%"

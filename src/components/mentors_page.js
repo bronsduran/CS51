@@ -11,7 +11,7 @@ class Mentors extends Component {
     return (
       <div className="page-wrapper">
       	<Iframe 
-      		src="https://airtable.com/embed/shrrwA5kbCOFC2WLH?backgroundColor=teal&viewControls=off"
+      		src="https://airtable.com/embed/shrrwA5kbCOFC2WLH?backgroundColor=teal&viewControls=on"
       		className="airtable-embed"
       		height="100%"
       		width="100%"
