@@ -12,16 +12,16 @@ class CoursePage51a extends Component {
   render() {
     return (
       <div className="page-wrapper">
-        <Grid className="grid-wrapper">
-          <Row>
-            <Col md={3} smHidden={true} xsHidden={true} >
+        <div className="grid-wrapper">
+          <div className="row">
+            <div className="col-md-3">
               <SideBarlinks classStyleName="menu-options d-none d-md-block"/>
-            </Col>
-            <Col md={9} >
-              <Image src="./course-info.png" responsive />
-            </Col>
-          </Row>
-        </Grid>
+            </div>
+            <div className="col-md-9">
+              <img src="./course-info.png" class="img-fluid" alt="Responsive image"/>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
