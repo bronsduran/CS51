@@ -29,7 +29,8 @@ export default class SideBarLinks extends Component {
   componentDidMount() {
     // using call(this) is hacky and probably not the best practice
     // I'm doing this so that the state can be set in each of the calls
-    // whenever a new record is recieved.
+    // whenever a new record is recieved. Database should probably return
+    // a promise instead of setting the state of this component
     Airtable.fetchAdministrivia.call(this);
     Airtable.fetchAssignments.call(this);
     Airtable.fetchLectureSlides.call(this);
@@ -38,45 +39,43 @@ export default class SideBarLinks extends Component {
 
   render() {  
     return (
-      <div>
-        <List className="menu-options">
-          <ListItem
-            primaryText="Administrivia"
-            initiallyOpen={true}
-            primaryTogglesNestedList={true}
-            nestedItems={this.mapRecordsToElements(this.state.administrivia)}
-          />
-          <Divider />
-          <ListItem
-            primaryText="Assignments"
-            initiallyOpen={true}
-            primaryTogglesNestedList={true}
-            nestedItems={this.mapRecordsToElements(this.state.assignments)}
-          />
-          <Divider />
-          <ListItem
-            primaryText="Class Slides"
-            initiallyOpen={true}
-            primaryTogglesNestedList={true}
-            nestedItems={this.mapRecordsToElements(this.state.classSlides)}
-          />
-          <Divider />
-          <ListItem
-            primaryText="Resources"
-            initiallyOpen={true}
-            primaryTogglesNestedList={true}
-            nestedItems={this.mapRecordsToElements(this.state.resources)}
-          />
-          <Divider />
-          <ListItem
-            primaryText="Other"
-            initiallyOpen={true}
-            primaryTogglesNestedList={true}
-            nestedItems={this.mapRecordsToElements(this.state.other)}
-          />
-          <Divider />
-        </List>
-      </div>
+      <List className={this.props.classStyleName}>
+        <ListItem
+          primaryText="Administrivia"
+          initiallyOpen={true}
+          primaryTogglesNestedList={true}
+          nestedItems={this.mapRecordsToElements(this.state.administrivia)}
+        />
+        <Divider />
+        <ListItem
+          primaryText="Assignments"
+          initiallyOpen={true}
+          primaryTogglesNestedList={true}
+          nestedItems={this.mapRecordsToElements(this.state.assignments)}
+        />
+        <Divider />
+        <ListItem
+          primaryText="Class Slides"
+          initiallyOpen={true}
+          primaryTogglesNestedList={true}
+          nestedItems={this.mapRecordsToElements(this.state.classSlides)}
+        />
+        <Divider />
+        <ListItem
+          primaryText="Resources"
+          initiallyOpen={true}
+          primaryTogglesNestedList={true}
+          nestedItems={this.mapRecordsToElements(this.state.resources)}
+        />
+        <Divider />
+        <ListItem
+          primaryText="Other"
+          initiallyOpen={true}
+          primaryTogglesNestedList={true}
+          nestedItems={this.mapRecordsToElements(this.state.other)}
+        />
+        <Divider />
+      </List>
     );
   } 
 }

@@ -12,23 +12,18 @@ import MenuItem from 'material-ui/MenuItem';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import SvgIcon from 'material-ui/SvgIcon';
 import { Switch, Route, Link } from 'react-router-dom';
-import LandingPage from './landing_page';
 import CoursePage51a from './course_page_51a';
-import CoursePage51b from './course_page_51b';
 import Projects from './projects';
 import Partners from './partners_page.js';
 import Mentors from './mentors_page.js';
-import About from './about_page.js';
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
 import SideBarLinks from './cs51-sidebar-links';
+import {List, ListItem} from 'material-ui/List';
+import * as Airtable from '../database';
 
 function applyClickHandler() {
   alert('The application period for Winter 2018 has ended, and will reopen fall 2019.');
-}
-
-function cs52ClickHandler() {
-  alert('Coming soon :)');
 }
 
 function goHome() {
@@ -45,7 +40,9 @@ export default class App extends Component {
 
 	constructor(props) {
     super(props);
-    this.state = {open: false};
+    this.state = {
+    	open: false
+    };
   }
 
   handleToggle = () => this.setState({open: !this.state.open});
@@ -64,24 +61,51 @@ export default class App extends Component {
   						</SvgIcon>
 		          <ToolbarTitle className="navigation-title" text="CS + SG Studio" />
 		        </ToolbarGroup>
-		        <ToolbarGroup lastChild={true} className="nav-button-group hidden-xs hidden-sm">
+		        <ToolbarGroup lastChild={true} className="nav-button-group d-none d-md-flex">
+		        	<FlatButton label="Home" className="nav-button" containerElement={<Link to={'/'}></Link>}/>
 							<FlatButton label="Partners" className="nav-button" containerElement={<Link to={'/partners'}></Link>}/>
 							<FlatButton label="Mentors" className="nav-button" containerElement={<Link to={'/mentors'}></Link>}/>
       				<FlatButton label="Projects" className="nav-button" containerElement={<Link to={'/projects'}></Link>}/>
-      				<FlatButton label="CS51" className="nav-button" containerElement={<Link to={'/'}></Link>}/>
-      				<FlatButton label="CS52" className="nav-button" onClick={cs52ClickHandler} />
 		        	<ToolbarSeparator />
 		          <RaisedButton label="Apply" onClick={applyClickHandler} primary={true} />
 		        </ToolbarGroup>
-		        <ToolbarGroup lastChild={true} className="nav-button-group hidden-md hidden-lg">
+		        <ToolbarGroup lastChild={true} className="nav-button-group d-md-none">
 		        	<MenuIcon style={iconStyles}  onClick={this.handleToggle} color="#FFF" />
-		        	<Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})} >
-			          <MenuItem onClick={this.handleClose} containerElement={<Link to={'/partners'}></Link>}>Partners</MenuItem>
-			          <Divider/>
-			          <MenuItem onClick={this.handleClose} containerElement={<Link to={'/mentors'}></Link>}>Mentors</MenuItem>
-			          <Divider/>
-			          <MenuItem onClick={this.handleClose} containerElement={<Link to={'/projects'}></Link>}>Projects</MenuItem>
-			          <Divider/>
+		        	<Drawer docked={true} width="50%" open={this.state.open} onRequestChange={(open) => this.setState({open})} >
+			          <Toolbar className="mobile-navigation-bar">
+						        <ToolbarGroup firstChild={true} className="mobile-navigation-brand-container" onClick={goHome}>
+						        	<SvgIcon className="logo" color="#FFF" hoverColor={greenA200} viewBox="0 0 87 48" >
+				    						<path d={logo_path} />
+				  						</SvgIcon>
+						          <ToolbarTitle className="navigation-title" text="CS + SG Studio" />
+						        </ToolbarGroup>
+						      </Toolbar>
+			          <List>
+			          	<ListItem
+				          	onClick={this.handleClose}
+				            primaryText="Home"
+				            containerElement={<Link to={'/'}></Link>}
+				          />
+				          <ListItem
+				          	onClick={this.handleClose}
+				            primaryText="Partners"
+				            containerElement={<Link to={'/partners'}></Link>}
+				          />
+				          <Divider />
+				          <ListItem
+				          	onClick={this.handleClose}
+				            primaryText="Mentors"
+				            containerElement={<Link to={'/mentors'}></Link>}
+				          />
+				          <Divider />
+				          <ListItem
+				          	onClick={this.handleClose}
+				            primaryText="Projects"
+				            containerElement={<Link to={'/projects'}></Link>}
+				          />
+				          <Divider />
+				          <SideBarLinks classStyleName="mobile-menu-options" />
+				        </List>
 			        </Drawer>
 		        </ToolbarGroup>
       		</Toolbar>
@@ -91,7 +115,6 @@ export default class App extends Component {
 						<Route path="/partners" component={Partners} />
 						<Route path="/mentors" component={Mentors} />
 		      </Switch>
-
       	</div>
       </MuiThemeProvider>
     );

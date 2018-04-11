@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import Iframe from './iframe_wrapper';
-import Header from './page_header';
-import Description from './page_description';
 
-const mentors_description = "mentors page description goes here";
 
 class Mentors extends Component {
 
@@ -11,7 +8,7 @@ class Mentors extends Component {
     return (
       <div className="page-wrapper">
       	<Iframe 
-      		src="https://airtable.com/embed/shrrwA5kbCOFC2WLH?backgroundColor=teal&viewControls=on"
+      		src="https://airtable.com/embed/shrrwA5kbCOFC2WLH?backgroundColor=transparent&viewControls=on"
       		className="airtable-embed"
       		height="100%"
       		width="100%"

@@ -1,6 +1,8 @@
 const Airtable = require('airtable');
 const base = new Airtable({apiKey: 'keyJoo0QH6ip5yH4S'}).base('app2yrNbBNc7l94XW');
 
+// Note: It would be good to use local storage as a cache
+// in order to reduce the number of network requests
 export function fetchAdministrivia() {
 	let administrivia = [];
 	let thisContext = this;
